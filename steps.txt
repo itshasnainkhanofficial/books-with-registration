@@ -1,0 +1,19 @@
+1- created registration form in angular with validation
+2- create routes in angular application so we can navigate to login , registration , userprofile and dashboard
+3- created backend folder and install the dependencies for backend express body-parser mongoose cors dotenv jsonwebtoken bcryptjs
+4- while install nodemon globally to reload server automatically by npm install nodemon -g
+5- now created schema in for registeration form
+6- then created routes for post,get,put,delete http requests
+7- having problem with updating current date
+8- problem with default value are not setting automatically when updating
+9- inserted encrypted password after succufully inserting simple password
+10- created login post route 
+11- now apply jsonwebtoken
+12- ngModel with formControlName problem in reactive form 
+13- should we import auth guard in app module or not?
+14- not able to get object from response in deshboard
+15- can not verify token for addbooks
+16- not proper error handlings
+17- if form and table at same page than table should populate as soon as form submited
+18- can't insert data from form-group of creadiantial group 
+19- could not insert date

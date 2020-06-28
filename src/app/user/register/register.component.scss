@@ -1,0 +1,13 @@
+input.ng-touched.ng-invalid{
+    border : 1px solid red ; 
+    box-shadow: 0 0 13px inset rgba(255,0,0,0.2);
+}
+
+.registerform.VALID {
+    border : 1px solid green ; 
+    box-shadow: 0 0 13px  rgba(0,255,0,0.2) ;
+}
+.registerform.INVALID {
+    border : 1px solid red ; 
+    box-shadow: 0 0 13px  rgba(255,0,0,0.2) ;
+}

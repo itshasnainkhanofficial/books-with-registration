@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <table class="table rounded shadow p-5 my-5">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">username</th>
+              <th scope="col">email</th>
+              <th scope="col">password</th>
+              <th scope="col">role</th>
+              <th scope="col">gender</th>
+              <th scope="col">delete</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="users$ | async as users">
+              <ng-container *ngFor="let user of users">
+
+            <tr>
+              <th scope="row">1</th>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.password}}</td>
+              <td>{{user.user_role}}</td>
+              <td>{{user.gender}}</td>
+              <td class="text-danger">delete</td>
+            </tr>
+
+        </ng-container>
+          </tbody>
+        </table>
+      </div>
+</div>

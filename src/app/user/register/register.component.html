@@ -1,0 +1,100 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 m-auto">
+        <!-- [ngClass]="formStatus" -->
+        <form class="rounded shadow p-5 m-5 registerform" [formGroup]="myReactiveForm" (ngSubmit)="userRegister()" >
+          <h1>User Registration</h1>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" autocomplete="off"  placeholder="Enter username" formControlName="username">
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched" >
+                    <span  *ngIf="myReactiveForm.get('username').errors['required']">
+                      Please enter valid username
+                    </span>
+                    <span *ngIf="myReactiveForm.get('username').errors['notallowedname']">
+                      {{myReactiveForm.get('username').value}} is not allowed
+                    </span>
+                    <span *ngIf="myReactiveForm.get('username').errors['minlength']">
+                      username length must be more than 2 character
+                    </span>
+                  </small>
+                </div>
+                <!-- <div  formGroupName="userCredentials">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email"  autocomplete="off" placeholder="Enter email" formControlName="email">
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('userCredentials.email').valid && myReactiveForm.get('userCredentials.email').touched">
+                    <span *ngIf="myReactiveForm.get('userCredentials.email').errors['email']">
+                      
+                      Please enter valid email
+                    </span>
+                    <span *ngIf="myReactiveForm.get('userCredentials.email').errors['emailnotallowed']">
+                      the email address {{myReactiveForm.get('userCredentials.email').value}} is not allowed
+                    </span>
+                  </small>
+                </div>
+    
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password"  autocomplete="off" placeholder="Enter password" formControlName="password">
+                  <small id="passwordhelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('userCredentials.password').valid && myReactiveForm.get('userCredentials.password').touched">Please enter valid passowrd.</small>
+                </div>
+              </div>  -->
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email"  autocomplete="off" placeholder="Enter email" formControlName="email">
+                <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('email').valid && myReactiveForm.get('email').touched">
+                  <span *ngIf="myReactiveForm.get('email').errors['email']">
+                    
+                    Please enter valid email
+                  </span>
+                  <span *ngIf="myReactiveForm.get('email').errors['emailnotallowed']">
+                    the email address {{myReactiveForm.get('email').value}} is not allowed
+                  </span>
+                </small>
+              </div>
+  
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password"  autocomplete="off" placeholder="Enter password" formControlName="password">
+                <small id="passwordhelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('password').valid && myReactiveForm.get('password').touched">Please enter valid passowrd.</small>
+              </div>
+                 <div class="form-group">
+                  <label for="cpassword">Confirmed Password</label>
+                  <input type="password" class="form-control" id="cpassword"  autocomplete="off" placeholder="confirm password" formControlName="cpassword">
+                  <small id="cpasswordhelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('cpassword').valid && myReactiveForm.get('cpassword').touched">password did not matched</small>
+                </div> 
+                 <div class="form-group">
+                    <label for="user_role">select user role</label>
+                  <select class="form-control" id="user_role" formControlName="user_role">
+                      <option value="">select role</option>
+                      <option value="1">admin</option>
+                      <option value="2">librarian</option>
+                      <option value="3">reader</option>
+                  </select>
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('user_role').valid && myReactiveForm.get('user_role').touched">Please select role.</small>
+                </div> 
+    
+              
+                     <div class="form-check pb-2" *ngFor="let gender of genders">
+                      <input class="form-check-input" type="radio"  id="{{gender.id}}" value="{{gender.id}}" formControlName="gender">
+                      <label class="form-check-label" for="{{gender.id}}">{{gender.genderType}}</label>
+                    </div> 
+    
+                  
+                  
+                
+                <button type="submit" class="btn btn-primary" [disabled]="!myReactiveForm.valid">Add</button>
+                <!-- <button type="submit" class="btn btn-primary" [disabled]="disableBtn">Add</button> -->
+                <button type="button" class="btn btn-secondary mx-1" >Save</button>
+                <button type="button" class="btn btn-warning" >Fetch</button>
+              </form>
+      </div>
+   
+      
+      
+      
+    </div>
+  </div>

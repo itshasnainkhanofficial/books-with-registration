@@ -1,0 +1,30 @@
+<div class="col-md-7 m-auto">
+    <table class="table rounded shadow p-5 my-5">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">username</th>
+          <th scope="col">email</th>
+          <th scope="col">role</th>
+          <th scope="col">gender</th>
+          
+        </tr>
+      </thead>
+      <!-- *ngIf="users$ | async as users" -->
+      <!-- the above line will be in tbody when learn how to get object from response-->
+      <tbody > 
+          <ng-container *ngFor="let user of users$ index as i" >
+
+        <tr>
+          <th scope="row">{{i + 1}}</th>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.user_role}}</td>
+          <td>{{(user.gender)}}</td>
+          
+        </tr>
+
+    </ng-container>
+      </tbody>
+    </table>
+  </div>

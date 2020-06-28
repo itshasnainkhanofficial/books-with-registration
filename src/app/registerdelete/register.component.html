@@ -1,0 +1,123 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5">
+        <!-- [ngClass]="formStatus" -->
+        <form class="rounded shadow p-5 m-5 registerform" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()" >
+          <h1>User Registration</h1>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" autocomplete="off"  placeholder="Enter username" formControlName="username">
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched" >
+                    <span  *ngIf="myReactiveForm.get('username').errors['required']">
+                      Please enter valid username
+                    </span>
+                    <span *ngIf="myReactiveForm.get('username').errors['notallowedname']">
+                      {{myReactiveForm.get('username').value}} is not allowed
+                    </span>
+                    <span *ngIf="myReactiveForm.get('username').errors['minlength']">
+                      username length must be more than 2 character
+                    </span>
+                  </small>
+                </div>
+                <div  formGroupName="userCredentials">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email"  autocomplete="off" placeholder="Enter email" formControlName="email">
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('userCredentials.email').valid && myReactiveForm.get('userCredentials.email').touched">
+                    <span *ngIf="myReactiveForm.get('userCredentials.email').errors['email']">
+                      
+                      Please enter valid email
+                    </span>
+                    <span *ngIf="myReactiveForm.get('userCredentials.email').errors['emailnotallowed']">
+                      the email address {{myReactiveForm.get('userCredentials.email').value}} is not allowed
+                    </span>
+                  </small>
+                </div>
+    
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password"  autocomplete="off" placeholder="Enter password" formControlName="password">
+                  <small id="passwordhelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('userCredentials.password').valid && myReactiveForm.get('userCredentials.password').touched">Please enter valid passowrd.</small>
+                </div>
+              </div>
+                <div class="form-group">
+                  <label for="cpassword">Confirmed Password</label>
+                  <input type="password" class="form-control" id="cpassword"  autocomplete="off" placeholder="confirm password" formControlName="cpassword">
+                  <small id="cpasswordhelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('cpassword').valid && myReactiveForm.get('cpassword').touched">password did not matched</small>
+                </div>
+                <div class="form-group">
+                    <label for="user_role">select user role</label>
+                  <select class="form-control" id="user_role" formControlName="user_role">
+                      <option value="">select role</option>
+                      <option value="admin">admin</option>
+                      <option value="librarian">librarian</option>
+                      <option value="reader">reader</option>
+                  </select>
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('user_role').valid && myReactiveForm.get('user_role').touched">Please select role.</small>
+                </div>
+    
+              
+                    <div class="form-check pb-2" *ngFor="let gender of genders">
+                      <input class="form-check-input" type="radio"  id="{{gender.id}}" value="{{gender.genderType}}" formControlName="gender">
+                      <label class="form-check-label" for="{{gender.id}}">{{gender.genderType}}</label>
+                    </div>
+    
+                  
+                  
+                
+                <button type="submit" class="btn btn-primary" [disabled]="disableBtn">Add</button>
+                <button type="button" class="btn btn-secondary mx-1" >Save</button>
+                <button type="button" class="btn btn-warning" >Fetch</button>
+              </form>
+      </div>
+      <div class="col-md-7">
+        <table class="table rounded shadow p-5 my-5">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">username</th>
+              <th scope="col">email</th>
+              <th scope="col">password</th>
+              <th scope="col">role</th>
+              <th scope="col">gender</th>
+              <th scope="col">delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td class="text-danger">delete</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td>@fat</td>
+              <td class="text-danger">delete</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+              <td class="text-danger">delete</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      
+      
+    </div>
+  </div>

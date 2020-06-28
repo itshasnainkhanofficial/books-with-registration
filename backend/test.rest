@@ -1,0 +1,76 @@
+post http://localhost:3000/api/user/login
+Content-Type: application/json
+auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVlNjY3NGU0YjRjYTNiZTA4ZjFhMjciLCJpYXQiOjE1OTI3MzY1NzB9.SffZLsuPRkO_SRe_yLQbub4U7G81ZZag4MI0zdY4lA0
+
+
+{
+         
+    "email" : "hasnain",
+    "password":"123"
+ 
+}
+
+    # "gender":1,
+    # "user_role": 1
+    # "email" : "papaadaf",
+    # "password":"123",
+# auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVlNjY3NGU0YjRjYTNiZTA4ZjFhMjciLCJpYXQiOjE1OTI3MzY1NzB9.SffZLsuPRkO_SRe_yLQbub4U7G81ZZag4MI0zdY4lA0
+    #  "email" : "papa",
+    #  "password" : "123"
+
+    # $currentDate:{publish_date : true}
+
+
+
+
+
+
+
+# {
+#    "username": "dadsf",
+#     "email" : "papa",
+#     "password":"123",
+#     "gender":1,
+#     "user_role": 1
+# }
+
+# "bookName": "afd",
+#     "category" : "physics",
+#     "author":"ghi",
+#     "book_qty": 5   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# "username" : "Hasnain",
+#     "email" : "hasnain@gmail.com",
+#     "password" : "hasnain123",
+#     "gender" : 1,
+#     "user_role" : 1

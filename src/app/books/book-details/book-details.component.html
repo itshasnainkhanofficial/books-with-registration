@@ -1,0 +1,101 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body" *ngIf="books">
+        <h5 class="card-title">
+            {{books.bookName}}
+
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{books.author}}
+        </h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">{{books.category}}</a>
+      <a href="#" class="card-link">{{books.book_qty}}</a>
+      <hr>
+        <ng-container *ngIf="_userService.loggedIn()">
+
+          <button class="btn btn-sm btn-primary mr-2" (click)="showEdit()">edit</button>
+          <button class="btn btn-sm btn-primary" (click)="removeBook()">delete</button>
+          
+        </ng-container>
+
+    </div>
+  </div>
+
+
+  <!-- <form [formGroup]="editbook" *ngIf="showForm" (ngSubmit)="editForm()">
+
+
+    <label for="bookName">bookName: </label>
+      <input type="text"  id="bookName" autocomplete="off" placeholder="Enter user book name" formControlName="bookName" >
+      <input type="text"  id="bookName" autocomplete="off" placeholder="Enter user book name" formControlName="author" >
+      <input type="text"  id="bookName" autocomplete="off" placeholder="Enter user book name" formControlName="category" >
+      <input type="text"  id="bookName" autocomplete="off" placeholder="Enter user book name" formControlName="book_qty" >
+    
+
+      <input type="submit" >
+  </form> -->
+  <form class="rounded shadow p-5 m-5 registerform" [formGroup]="editbook" (ngSubmit)="editForm()" *ngIf="showForm">
+    <h1>Add book</h1>
+
+
+    <div class="form-group">
+
+        <label for="bookname">bookName</label>
+        <input type="text" class="form-control" id="bookname" autocomplete="off" placeholder="Enter book name"
+            formControlName="bookName">
+        <small id="bookNamehelp" class="form-text text-danger"
+            *ngIf="!editbook.get('bookName').valid && editbook.get('bookName').touched">
+
+            <span *ngIf="editbook.get('bookName').errors['required']">
+                book name is required
+            </span>
+
+        </small>
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="author">author</label>
+        <input type="text" class="form-control" id="author" autocomplete="off" placeholder="Enter author name"
+            formControlName="author">
+        <small id="authorHelp" class="form-text text-danger"
+            *ngIf="!editbook.get('author').valid && editbook.get('author').touched">
+
+            <span *ngIf="editbook.get('author').errors['required']">
+                author name is required
+            </span>
+
+        </small>
+    </div>
+    <div class="form-group">
+
+        <label for="category">category</label>
+        <input type="text" class="form-control" id="category" autocomplete="off" placeholder="Enter category name"
+            formControlName="category">
+        <small id="categoryHelp" class="form-text text-danger"
+            *ngIf="!editbook.get('category').valid && editbook.get('category').touched">
+
+            <span *ngIf="editbook.get('category').errors['required']">
+                category name is required
+            </span>
+
+        </small>
+    </div>
+    <div class="form-group">
+
+        <label for="book_qty">book Quntity</label>
+        <input type="text" class="form-control" id="book_qty" autocomplete="off" placeholder="Enter book_qty name"
+            formControlName="book_qty">
+        <small id="book_qtyHelp" class="form-text text-danger"
+            *ngIf="!editbook.get('book_qty').valid && editbook.get('book_qty').touched">
+
+            <span *ngIf="editbook.get('book_qty').errors['required']">
+                book_qty name is required
+            </span>
+
+        </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!editbook.valid">login</button>
+</form>

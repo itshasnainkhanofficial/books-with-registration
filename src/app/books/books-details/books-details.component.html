@@ -1,0 +1,65 @@
+
+
+
+<div class="container m-5">
+    <div class="bg-primary p-5 text-white" *ngIf="books">
+
+        <h5 >book Name : {{books.bookName}}</h5>
+    
+        <h6 >My property : {{mybook}}</h6>
+    
+    </div>
+    <br/>
+    
+        <form [formGroup]="editbook">
+            <input type="text" class="form-control" id="bookname" autocomplete="off" placeholder="Enter book name"
+                formControlName="bookName">
+        <br />
+            <input type="text" class="form-control" id="myproperty" autocomplete="off" placeholder="Enter myproperty"
+                formControlName="myproperty">
+        </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form [formGroup]="editbook">
+                  <div formArrayName="BooksArrayForm">
+                      <ng-container *ngIf="showBooksAuthor == true" >
+                          <ng-container *ngFor="let book of editbook.get('BooksArrayForm').controls ; let i = index ">
+
+                              <div [formGroupName] = "i">
+
+                                <input type="text" class="form-control" id="bookname" autocomplete="off" placeholder="Enter book name"
+                                formControlName="bookName" >
+
+                                      <input type="text" class="form-control" id="author" autocomplete="off" placeholder="Enter author name"
+                                formControlName="author" >
+                 
+                                  
+                              </div>
+
+                          </ng-container>
+                      </ng-container>
+                  </div>
+              </form> -->

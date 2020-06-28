@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 m-auto">
+            <!-- [ngClass]="formStatus" -->
+            <form class="rounded shadow p-5 m-5 registerform" [formGroup]="bookForm" (ngSubmit)="newBook()">
+                <h1>Add book</h1>
+
+
+                <div class="form-group">
+
+                    <label for="bookname">bookName</label>
+                    <input type="text" class="form-control" id="bookname" autocomplete="off" placeholder="Enter book name"
+                        formControlName="bookName">
+                    <small id="bookNamehelp" class="form-text text-danger"
+                        *ngIf="!bookForm.get('bookName').valid && bookForm.get('bookName').touched">
+
+                        <span *ngIf="bookForm.get('bookName').errors['required']">
+                            book name is required
+                        </span>
+
+                    </small>
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="author">author</label>
+                    <input type="text" class="form-control" id="author" autocomplete="off" placeholder="Enter author name"
+                        formControlName="author">
+                    <small id="authorHelp" class="form-text text-danger"
+                        *ngIf="!bookForm.get('author').valid && bookForm.get('author').touched">
+
+                        <span *ngIf="bookForm.get('author').errors['required']">
+                            author name is required
+                        </span>
+
+                    </small>
+                </div>
+                <div class="form-group">
+
+                    <label for="category">category</label>
+                    <input type="text" class="form-control" id="category" autocomplete="off" placeholder="Enter category name"
+                        formControlName="category">
+                    <small id="categoryHelp" class="form-text text-danger"
+                        *ngIf="!bookForm.get('category').valid && bookForm.get('category').touched">
+
+                        <span *ngIf="bookForm.get('category').errors['required']">
+                            category name is required
+                        </span>
+
+                    </small>
+                </div>
+                <div class="form-group">
+
+                    <label for="book_qty">book Quntity</label>
+                    <input type="text" class="form-control" id="book_qty" autocomplete="off" placeholder="Enter book_qty name"
+                        formControlName="book_qty">
+                    <small id="book_qtyHelp" class="form-text text-danger"
+                        *ngIf="!bookForm.get('book_qty').valid && bookForm.get('book_qty').touched">
+
+                        <span *ngIf="bookForm.get('book_qty').errors['required']">
+                            book_qty name is required
+                        </span>
+
+                    </small>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">login</button>
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
