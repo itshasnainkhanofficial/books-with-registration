@@ -12,8 +12,8 @@
       </thead>
       <!-- *ngIf="users$ | async as users" -->
       <!-- the above line will be in tbody when learn how to get object from response-->
-      <tbody > 
-          <ng-container *ngFor="let user of users$ index as i" >
+      <tbody *ngIf="users$ | async as users"> 
+          <ng-container *ngFor="let user of users index as i" >
 
         <tr>
           <th scope="row">{{i + 1}}</th>

@@ -17,6 +17,8 @@ process.env.DB_CONNECT ,
 );
 
 
+// .then(console.log("connection stablished")).catch(console.log("connection failed"))
+
 
 
 // for error handling 

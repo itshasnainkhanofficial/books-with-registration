@@ -47,7 +47,6 @@
                 <input type="email" class="form-control" id="email"  autocomplete="off" placeholder="Enter email" formControlName="email">
                 <small id="emailHelp" class="form-text text-danger" *ngIf="!myReactiveForm.get('email').valid && myReactiveForm.get('email').touched">
                   <span *ngIf="myReactiveForm.get('email').errors['email']">
-                    
                     Please enter valid email
                   </span>
                   <span *ngIf="myReactiveForm.get('email').errors['emailnotallowed']">

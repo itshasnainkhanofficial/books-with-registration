@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
 import {User} from "../model/user";
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -13,9 +13,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class DashboardComponent implements OnInit {
 
   
-  users$ : User[] ;
+  // users$ : User[] ;
   
-  // users$ : Observable<User[]>;
+  users$ : Observable<User[]>;
 
   constructor(private _userService : UserService  , private router : Router) { }
 
@@ -27,10 +27,7 @@ export class DashboardComponent implements OnInit {
       
       res => {
         
-        
-        console.log(res);
-
-        this.users$ = res ;
+        this.users$ = of(res) ;
 
       },
     err =>{

@@ -22,8 +22,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
 //using routes
-app.use("/api/user" , RegisterationRoute)
-app.use("/api/book" , BookRoute)
+app.use("/api/user" , RegisterationRoute);
+app.use("/api/book" , BookRoute);
 
 
 
